@@ -85,5 +85,25 @@ python ./train.py --config D:/svc/_train/MeloTTS/melo/data/harry/config.json --m
 
 7. use your trained model:
 ```
-python infer.py --text "你好，世界" -m melotts-train-win/MeloTTS/melo/logs/G_<iter>.pth -o <output_dir>
+from melo.api import TTS
+
+device = "cuda:0"
+speed = 1.0
+
+model = TTS(language='ZH', device=device, use_hf=False, 
+    config_path='D:/svc/_train/MeloTTS/melo/logs/harry/config.json', 
+    ckpt_path='D:/svc/_train/MeloTTS/melo/logs/harry/G_37000.pth')
+speaker_ids = model.hps.data.spk2id
+print(speaker_ids)
+
+
+def txt2tts(fpath=""):
+    fwav = fpath.replace(".txt",".wav")
+    with open(fpath, 'r', encoding="utf-8") as f:
+        words = f.read()
+        print(words)
+        model.tts_to_file(words, speaker_ids['harry'], fwav, speed=speed)
+
+txt2tts("D:/test.txt")
+
 ```
