@@ -70,6 +70,19 @@ python melosteps.py --step=9
 # python preprocess_text.py --metadata data/harry/metadata.list 
 python melosteps.py --step=10
 ```
+Notice: step 7 and step 10, preprocess the wav and txt files, but in different folder:
+
+```
+python preprocess_text.py --metadata D:/dataset/_test/metadata.list 
+```
+
+6. train:
+
+```
+python ./train.py --config D:/svc/_train/MeloTTS/melo/data/harry/config.json --model harry
+```
 
 6. use your trained model:
-`python infer.py --text "你好，世界" -m melotts-train-win/MeloTTS/melo/logs/G_<iter>.pth -o <output_dir>`
+```
+python infer.py --text "你好，世界" -m melotts-train-win/MeloTTS/melo/logs/G_<iter>.pth -o <output_dir>
+```
