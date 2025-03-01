@@ -2,7 +2,8 @@
 * Windows 11
 * python 3.10 (conda)
 * pytorch 2.4.1 + cuda12.1
-* whisper
+* [whisper](https://huggingface.co/openai/whisper-large-v3)
+* [MeloTTS](https://github.com/myshell-ai/MeloTTS)
 
 # Install
 1. using conda, create a python 3.10 venv: `conda create -n winmelotts python=3.10`
