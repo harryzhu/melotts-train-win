@@ -36,9 +36,3 @@ def wav_dir_transcribe(wav_dir="", output_dir="", min_words = 0, max_words = 0):
                     f.write(result["text"])
             except Exception as err:
                 logger.error(f'ERROR:{0}'.format(err))
-
-
-#print(config.DIR_ROOT)
-
-
-#wav_dir_transcribe(f"{config.DIR_ROOT}/_wav",f"{config.DIR_ROOT}/_txt", min_words = 10, max_words = 150)

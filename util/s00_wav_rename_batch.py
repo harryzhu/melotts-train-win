@@ -47,8 +47,5 @@ def wav_rename_with_index_in_place(wav_dir= "", prefix=""):
         file_rename(fpath, fnew)
         i += 1
 
-#print(config.DIR_ROOT)
-
-#wav_rename_with_index_in_place(wav_dir=f"{config.DIR_ROOT}/source")
 
 

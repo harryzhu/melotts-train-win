@@ -18,7 +18,3 @@ def melotts_rm_wav_without_pair_bert_pt(mp3_dir=""):
 				continue	
 
 
-#print(config.DIR_ROOT)
-
-#melotts_rm_wav_without_pair_bert_pt(mp3_dir=f"{config.DIR_ROOT}/_wav")
-

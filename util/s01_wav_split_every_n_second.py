@@ -46,9 +46,4 @@ def mp3_dir_split_nsec(mp3_dir="", output_dir=""):
 			mp3_split_every_n_second(fpath, output_dir)
 	
 			
-#print(config.DIR_ROOT)
-
-			
-#mp3_dir_split_nsec(mp3_dir=f"{config.DIR_ROOT}/source", output_dir=f"{config.DIR_ROOT}/01_nsec")
-
 

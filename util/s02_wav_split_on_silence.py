@@ -60,9 +60,6 @@ def mp3_dir_split_on_silence(mp3_dir="", output_dir=""):
 	mp3_clean_short(output_dir)
 			
 
-#print(config.DIR_ROOT)
-			
-#mp3_dir_split_on_silence(f"{config.DIR_ROOT}/01_nsec",f"{config.DIR_ROOT}/02_slice")
 
 
 

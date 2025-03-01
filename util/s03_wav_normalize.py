@@ -35,9 +35,3 @@ def wav_normalize(mp3_dir: str = "", output_dir: str = ""):
             #print(f'{fpath}')
             wav_to_441000_pcm_s16le(fpath, output_dir)
 
-#print(config.DIR_ROOT)
-
-#melotts_wav_normalize(mp3_dir=f"{config.DIR_ROOT}/02_slice", output_dir=f"{config.DIR_ROOT}/_wav")
-
-
-#ar=44100, ac=1, acodec='pcm_s16le'

@@ -34,7 +34,3 @@ def is_having_chinese(words=""):
 	return False
 
 
-#print(config.DIR_ROOT)
-			
-#melotts_rm_wav_without_pair_txt(mp3_dir=f"{config.DIR_ROOT}/_wav")
-

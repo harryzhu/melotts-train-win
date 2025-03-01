@@ -23,7 +23,3 @@ def melotts_copy_wav_to_data(mp3_dir="", wav_dir="" , txt_dir=""):
 
 
 
-#print(config.DIR_ROOT)
-
-#melotts_rm_wav_without_pair_bert_pt(mp3_dir=f"{config.DIR_ROOT}/_wav")
-

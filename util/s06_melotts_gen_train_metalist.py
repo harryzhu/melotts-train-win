@@ -29,7 +29,4 @@ def melotts_gen_train_metalist(mp3_dir="", txt_dir="", voice_name="zh_harry", la
 	logger.debug(f'\npython preprocess_text.py --metadata {meta_path}')
 				
 
-			
-#melotts_gen_train_metalist(mp3_dir=f"{config.DIR_ROOT}/_wav", txt_dir=f"{config.DIR_ROOT}/_txt", meta_path = f"{config.DIR_ROOT}/metadata.list")
-
 
