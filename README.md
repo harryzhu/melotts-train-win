@@ -5,7 +5,7 @@
 * whisper
 
 # Install
-1. in your conda, create a python 3.10 venv: `conda create -n winmelotts python=3.10`
+1. using conda, create a python 3.10 venv: `conda create -n winmelotts python=3.10`
 2. activate winmelotts: `conda activate winmelotts	`
 3. clone this repo:
 
@@ -57,6 +57,7 @@ python melosteps.py --step=5
 python melosteps.py --step=6
 
 # step 7: generate *.bert.pt
+# python preprocess_text.py --metadata D:/dataset/_test/metadata.list 
 python melosteps.py --step=7
 
 # step 8: delete wav files which cannot generate .bert.pt by preprocess_text.py
@@ -65,6 +66,10 @@ python melosteps.py --step=8
 # step 9: copy valid wav files into train data_dir: melotts-train-win/MeloTTS/melo/data/[_wav, _txt]
 python melosteps.py --step=9
 
-# step 10: re-generate metadata.list, start train
+# step 10: re-generate metadata.list, start train, results will be in melotts-train-win/MeloTTS/melo/logs
+# python preprocess_text.py --metadata data/harry/metadata.list 
 python melosteps.py --step=10
 ```
+
+6. use your trained model:
+`python infer.py --text "你好，世界" -m melotts-train-win/MeloTTS/melo/logs/G_<iter>.pth -o <output_dir>`
