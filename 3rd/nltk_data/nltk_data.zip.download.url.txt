@@ -1,0 +1,5 @@
+1) 访问这里：https://github.com/nltk/nltk_data/tree/gh-pages
+2）clone或download
+3）下载得到nltk_data-gh-pages.zip并解压
+4）将文件中的packages文件夹重新命名为 nltk_data
+5）将 nltk_data 文件夹放置到 D:\nltk_data 或者 C:\Users\[当前用户名]\nltk_data
