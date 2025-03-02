@@ -1,4 +1,4 @@
-** this repo is not official **
+*this repo is not official*
 
 # Environment
 * Windows 11
@@ -17,7 +17,13 @@ git clone https://github.com/harryzhu/melotts-train-win.git
 cd melotts-train-win
 pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements.txt
+
+# 3rd/unidic/unidic.zip.download.url.txt
+# https://cotonoha-dic.s3-ap-northeast-1.amazonaws.com/unidic-3.1.0.zip
 python ./02_unidic_fix_download.py
+
+# 3rd/nltk_data/nltk_data.zip.download.url.txt
+# https://github.com/nltk/nltk_data/tree/gh-pages
 python ./03_nltk_data_fix.py
 cd MeloTTS
 pip install .
