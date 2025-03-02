@@ -12,7 +12,7 @@
 2. activate winmelotts: `conda activate winmelotts	`
 3. clone this repo:
 
-```
+```bash
 git clone https://github.com/harryzhu/melotts-train-win.git
 cd melotts-train-win
 pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121
@@ -26,7 +26,7 @@ pip install .
 4. prepare your dataset, i.e.: put your wav files in: `D:/dataset/_test/source`
 5. open `melotts-train-win/melosteps.py`, update the following vars as yours:
 
-```
+```python
 DATASET_DIR_ROOT='D:/dataset/_test'
 #
 TRAIN_DATA_DIR='D:/svc/_train/MeloTTS/melo/data'
@@ -37,7 +37,7 @@ TRAIN_DATA_CFG_DIR=f'{TRAIN_DATA_DIR}/harry'
 
 5. run the following steps:
 
-```
+```bash
 # step 0: rename the files, format: foldername_num.wav
 python melosteps.py --step=0
 
@@ -75,19 +75,19 @@ python melosteps.py --step=10
 ```
 Notice: `step 7` and `step 10`, preprocess the wav and txt files, but in different folder:
 
-```
+```bash
 python preprocess_text.py --metadata D:/dataset/_test/metadata.list 
 ```
 
 6. train:
 
-```
+```bash
 python ./train.py --config D:/svc/_train/MeloTTS/melo/data/harry/config.json --model harry
 ```
 
 7. use your trained model:
 
-```
+```python
 from melo.api import TTS
 
 device = "cuda:0"
@@ -111,7 +111,7 @@ txt2tts("D:/test.txt")
 ```
 
 8. check loss in browser:
-```
+```bash
 # run tensorboard, then open the url: http://localhost:6006/
 #
 tensorboard --logdir=D:/svc/_train/MeloTTS/melo/logs/harry
