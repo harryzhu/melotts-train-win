@@ -1,6 +1,8 @@
 # flake8: noqa: E402
 
 import os
+import sys
+sys.path.append(os.path.dirname(__file__))
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 os.environ['LOCAL_RANK'] = '0'
@@ -9,7 +11,7 @@ os.environ['MASTER_ADDR'] = '127.0.0.1'
 os.environ['MASTER_PORT'] = '10902'
 os.environ["USE_LIBUV"] = '0'
 #
-#os.environ["HF_HUB_OFFLINE"] = "True"
+os.environ["HF_HUB_OFFLINE"] = "True"
 
 import torch
 from torch.nn import functional as F

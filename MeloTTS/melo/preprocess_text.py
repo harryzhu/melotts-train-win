@@ -52,6 +52,9 @@ def main(
         for line in tqdm(open(metadata, encoding="utf-8").readlines()):
             try:
                 utt, spk, language, text = line.strip().split("|")
+                # bert_path = utt.replace(".wav", ".bert.pt")
+                # if os.path.isfile(bert_path):
+                #     continue
                 norm_text, phones, tones, word2ph, bert = clean_text_bert(text, language, device='cuda:0')
                 for ph in phones:
                     if ph not in symbols and ph not in new_symbols:
@@ -78,7 +81,7 @@ def main(
                 os.makedirs(os.path.dirname(bert_path), exist_ok=True)
                 torch.save(bert.cpu(), bert_path)
             except Exception as error:
-                print("err!",line, error)
+                print("err!", error, "line: ", line, ".bert.pt: ", bert_path)
 
         out_file.close()
 
@@ -120,8 +123,8 @@ def main(
     config = json.load(open(config_path, encoding="utf-8"))
     config["data"]["spk2id"] = spk_id_map
 
-    config["data"]["training_files"] = train_path
-    config["data"]["validation_files"] = val_path
+    config["data"]["training_files"] = train_path.replace("\\","/")
+    config["data"]["validation_files"] = val_path.replace("\\","/")
     config["data"]["n_speakers"] = len(spk_id_map)
     config["num_languages"] = num_languages
     config["num_tones"] = num_tones
