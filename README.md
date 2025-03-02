@@ -1,3 +1,5 @@
+** this repo is not official **
+
 # Environment
 * Windows 11
 * python 3.10 (conda)
@@ -84,6 +86,7 @@ python ./train.py --config D:/svc/_train/MeloTTS/melo/data/harry/config.json --m
 ```
 
 7. use your trained model:
+
 ```
 from melo.api import TTS
 
@@ -105,5 +108,27 @@ def txt2tts(fpath=""):
         model.tts_to_file(words, speaker_ids['harry'], fwav, speed=speed)
 
 txt2tts("D:/test.txt")
+```
+
+8. check loss in browser:
+```
+# run tensorboard, then open the url: http://localhost:6006/
+#
+tensorboard --logdir=D:/svc/_train/MeloTTS/melo/logs/harry
+```
+
+<hr/>
+
+** MeloTTS is owned by the following citation **
+
+## Citation
 
 ```
+@software{zhao2024melo,
+  author={Zhao, Wenliang and Yu, Xumin and Qin, Zengyi},
+  title = {MeloTTS: High-quality Multi-lingual Multi-accent Text-to-Speech},
+  url = {https://github.com/myshell-ai/MeloTTS},
+  year = {2023}
+}
+```
+
