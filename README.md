@@ -26,7 +26,7 @@ python ./02_unidic_fix_download.py
 # https://github.com/nltk/nltk_data/tree/gh-pages
 python ./03_nltk_data_fix.py
 cd MeloTTS
-pip install .
+pip install -e .
 ```
 
 4. prepare your dataset, i.e.: put your wav files in: `D:/dataset/_test/source`
