@@ -19,6 +19,13 @@ def rm_wav_without_pair_txt(mp3_dir=""):
 					f.close()
 					if is_having_chinese(fcnt) != True:
 						os.rename(ftxt,ftxt.replace("_txt","_bak"))
+					elif is_many_same_words(fcnt):
+						logger.debug(ftxt)
+						os.rename(ftxt,ftxt.replace("_txt","_bak"))
+					
+					if is_having_japanese_korean(fcnt):
+						logger.warn(fcnt)
+						os.rename(ftxt,ftxt.replace("_txt","_bak"))
 
 			if not os.path.isfile(ftxt):
 				logger.debug("SKIP(not exist):", ftxt)
@@ -33,4 +40,29 @@ def is_having_chinese(words=""):
 			return True
 	return False
 
+def is_having_japanese_korean(words=""):
+	for word in words:
+		if '\u3040' <= word <= '\u309F':
+			return True
+		if '\u30A0' <= word <= '\u30FF':
+			return True
+		if '\u31F0' <= word <= '\u31FF':
+			return True
+		if '\uAC00' <= word <= '\uD7AF':
+			return True
+		if '\u1100' <= word <= '\u11FF':
+			return True
+		if '\u3130' <= word <= '\u318F':
+			return True
+	return False
 
+def is_many_same_words(words=""):
+	for word in words:
+		if not ('\u4e00' <= word <= '\u9fa5'):
+			continue
+		sub = "".join([word,word,word,word])
+		idx = words.find(sub)
+		if idx >=0:
+			logger.debug(sub,":",str(idx), "---",words)
+			return True
+	return False

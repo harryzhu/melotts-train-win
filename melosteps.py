@@ -12,8 +12,34 @@ from util.s06_melotts_gen_train_metalist import melotts_gen_train_metalist
 from util.s08_rm_wav_without_pair_bert_pt import melotts_rm_wav_without_pair_bert_pt
 from util.s09_copy_wav_to_data import melotts_copy_wav_to_data
 
-DATASET_DIR_ROOT="D:/dataset/_test"
+#from util.s04_wav_to_txt import wav_dir_transcribe
 
+#DATASET_DIR_ROOT="D:/dataset/_test"
+#
+#DATASET_DIR_ROOT="D:/dataset/bohaixiaoli"
+#wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+DATASET_DIR_ROOT="D:/dataset/dongxinggoushisan"
+# wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+#DATASET_DIR_ROOT="D:/dataset/LinvoShuoYuZhou"
+#wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+#DATASET_DIR_ROOT="D:/dataset/nongfushuo"
+# wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+#DATASET_DIR_ROOT="D:/dataset/sanyiboshi"
+# wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+#DATASET_DIR_ROOT="D:/dataset/yonggandeyong"
+# wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+#DATASET_DIR_ROOT="D:/dataset/wenyifei"
+# wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
+
+# DATASET_DIR_ROOT="D:/dataset/xinxisu"
+# DATASET_DIR_ROOT="D:/dataset/xutongxue"
+# DATASET_DIR_ROOT="D:/dataset/yanbojun"
 
 #
 TRAIN_DATA_DIR='D:/svc/_train/MeloTTS/melo/data'
@@ -57,7 +83,7 @@ if args.step == 3:
 if args.step == 4:
     print(f'run this step with whisper conda env')
     from util.s04_wav_to_txt import wav_dir_transcribe
-    wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 10, max_words = 150)
+    wav_dir_transcribe(f"{DATASET_DIR_ROOT}/_wav", f"{DATASET_DIR_ROOT}/_txt", min_words = 15, max_words = 150)
 
 # step 5
 if args.step == 5:
