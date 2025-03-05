@@ -82,6 +82,7 @@ def main(
                 torch.save(bert.cpu(), bert_path)
             except Exception as error:
                 print("err!", error, "line: ", line, ".bert.pt: ", bert_path)
+                os.rename(utt,utt.replace("_wav", "_bak"))
 
         out_file.close()
 

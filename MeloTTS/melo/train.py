@@ -13,6 +13,10 @@ os.environ["USE_LIBUV"] = '0'
 #
 os.environ["HF_HUB_OFFLINE"] = "True"
 
+import warnings
+warnings.filterwarnings('ignore')
+#
+
 import torch
 from torch.nn import functional as F
 from torch.utils.data import DataLoader
